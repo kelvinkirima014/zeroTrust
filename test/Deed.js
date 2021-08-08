@@ -2,43 +2,52 @@ const { expect } = require('chai');
 
 
 
-const humanReadableUnixTimeStamp = (timeStampInt) => {
-	return new Date(timeStampInt * 1000);
+const humanReadableUnixTimestamp = (timestampInt) => {
+	return new Date(timestampInt * 1000);
 }
-
-describe("Deed events and state", function () {
-	let Deed, deed, owner;
+describe("Escrow Events and State", function() {
+	
+	let Deed, deed, seller; // seller is owner
+      
 	let closedEvent;
-
 	beforeEach(async () => {
+		
+	    
 		Deed = await ethers.getContractFactory("Deed");
-		deed = await Deed.deploy({ value: ethers.utils.parseEther("2.0") });
-		await deed.deployed();
-		 [_, owner] = await ethers.getSigners();
-
-		closedEvent = new Promise((res, rej) => {
-			deed.on('Closed', (when, event) => {
-			  event.removeListener();
-		  
-			  res({
-			    when,
-			  });
-			});
-		  
-			setTimeout(() => {
-			  rej(new Error('timeout'));
-			}, 40000);
-	        });
-        });
-
-	it('should set contract state to closed', async () => {
-		expect (await deed.owner()).to.equal(owner.address);   
-		expect(await deed.totalSales()).to.equal(0);
-		expect(await deed.this.state()).to.equal(0);
-		await deed.close();
-		let event = await closedEvent;
-		console.log('Closed'); 
-		console.log(humanReadableUnixTimeStamp(event.when.toString()));
-		expect(await deed.state()).to.equal(3); //sold
+		deed = await Deed.deploy({ value: ethers.utils.parseEther("2.0") });  
+	    
+		[seller, _] = await ethers.getSigners();
+	    
+		// Find the better desgin for this.
+		// EVENTS
+		closedEvent = new Promise((resolve, reject) => {
+		  deed.on('Closed', (when, event) => {
+		    event.removeListener();
+	    
+		    resolve({
+		      when,
+		    });
+		  });
+	    
+		  setTimeout(() => {
+		    reject(new Error('timeout'));
+		  }, 60000)
+		});
 	});
-})
+	it("Should set the contract state to 'Closed'.", async function () {
+		
+		expect(await deed.seller()).to.equal(seller.address);
+	    
+		expect(await deed.totalSales()).to.equal(0); // Should be 0
+		expect(await deed.state()).to.equal(0); // Sale
+	    
+		
+		await deed.close();
+	    
+		let event = await closedEvent;
+		console.log("Closed");
+		console.log(humanReadableUnixTimestamp(event.when.toString()));
+	    
+		expect(await deed.state()).to.equal(3); // Closed
+	      });
+});
