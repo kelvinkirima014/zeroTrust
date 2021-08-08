@@ -99,7 +99,8 @@ contract Deed {
             block.timestamp
         );
     }
-
+    //Transaction has to include `2 * value` ether. The
+    //ether will be locked until confirmReceived is called.
     function confirmPurchase()
         public
         notSeller
