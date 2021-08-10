@@ -1,7 +1,6 @@
 import React, { useState, useEffect, createRef } from 'react';
 import { ethers } from 'ethers';
-import Deed from 'src/artifacts/contracts/Deed.sol/Deed.json';
-
+import Deed from '../artifacts/contracts/Deed.sol/Deed.json'
 import {
 	humanReadableDeedState,
 	humanReadableUnixTimestamp,
