@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createRef } from 'react';
-import { ethers } from 'ethers';
+import { Contract, ethers } from 'ethers';
 import Deed from '../artifacts/contracts/Deed.sol/Deed.json'
 import {
 	humanReadableDeedState,
@@ -34,7 +34,7 @@ async function requestAccount() {
       }
       
 
-const Dapp = () => {
+function Dapp (){
 	const [contractEnd, setContractEnd] = useState(true);
 	const[deed, setDeed] = useState({
 		state: null,

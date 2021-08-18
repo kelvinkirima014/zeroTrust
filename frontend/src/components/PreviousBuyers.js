@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Table, Grid, Button } from 'semantic-ui-react';
+import React from 'react';
+import { Table, Button } from 'semantic-ui-react';
 // import { useSubstrate } from './substrate-lib';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 

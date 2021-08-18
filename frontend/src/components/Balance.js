@@ -36,16 +36,16 @@ function Balance ({
                 color: "black",
               }}
 
-              href="https://github.com/steadylearner"
+              href="https://github.com/kelvinkirima014"
               target="_blank"
               rel='noopener noreferrer'
             >
-              <Image alt="steadylearner github" src={`https://avatars.githubusercontent.com/u/32325099?v=4`} size={"mini"} />
+              <Image alt="Kirima's github" src={`https://avatars.githubusercontent.com/u/32325099?v=4`} size={"mini"} />
               <span style={{
                 fontWeight: "bold",
                 marginLeft: "0.5rem",
               }}>
-                Steadylearner
+                Kirima
               </span>
             </a>
           {/* <Image src={`${process.env.PUBLIC_URL}/assets/substrate-logo.png`} size='mini' /> */}

@@ -5,7 +5,7 @@ const { expect } = require('chai');
 const humanReadableUnixTimestamp = (timestampInt) => {
 	return new Date(timestampInt * 1000);
 }
-describe("Escrow Events and State", function() {
+describe("Deed Events and State", function() {
 	
 	let Deed, deed, seller; // seller is owner
       
@@ -18,7 +18,7 @@ describe("Escrow Events and State", function() {
 	    
 		[seller, _] = await ethers.getSigners();
 	    
-		// Find the better desgin for this.
+		
 		// EVENTS
 		closedEvent = new Promise((resolve, reject) => {
 		  deed.on('Closed', (when, event) => {

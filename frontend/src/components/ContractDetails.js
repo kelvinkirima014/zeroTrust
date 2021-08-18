@@ -42,7 +42,8 @@ const ContractDetails = ({
                         maxWidth: "12rem",
                         // maxHeight: "10rem",
                     }}
-                    src="/car.jpeg" // Should be image from item later
+                    src="/car.jpeg" 
+                    alt = "art"
                 />
             </div>
             
