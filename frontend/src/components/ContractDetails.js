@@ -28,8 +28,8 @@ const ContractDetails = ({
                 justifyContent: "center",
                 flexFlow: "column",
             }}>
-                {/* <h1>Car DeedContract</h1> */}
-                <h1>Buy a car with {price} ETH</h1>
+                {/* <h1>art DeedContract</h1> */}
+                <h1>Buy the art with {price} ETH</h1>
             </div>
             
             <div style={{
@@ -42,7 +42,7 @@ const ContractDetails = ({
                         maxWidth: "12rem",
                         // maxHeight: "10rem",
                     }}
-                    src="/car.jpeg" 
+                    src="./art.jpg" 
                     alt = "art"
                 />
             </div>

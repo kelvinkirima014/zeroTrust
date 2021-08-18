@@ -35,9 +35,9 @@ const Visitor = ({
             }}>
                 {deedState === "Sale" && <Button style={fullWidth} onClick={purchase} color="primary" variant="contained">I want to buy this</Button>}
                 {deedState === "Closed" && <p>"Please, wait until its seller restart the contract."</p>}
-                {deedState === "Locked" && <p>"The seller is sending a car to another client. Please, visit this page again later if you want to buy a car with this seller."</p>}
-                {deedState === "Complete" && <p>"Wait for the seller to sale a car again or not."</p>}
-                {deedState === "Release" && <p>"The seller will decide to sell a car again or not. Please wait if you want to buy it."</p>}
+                {deedState === "Locked" && <p>"The seller is sending the art to another client. Please, visit this page again later if you want to buy the art with this seller."</p>}
+                {deedState === "Complete" && <p>"Wait for the seller to sale the art again or not."</p>}
+                {deedState === "Release" && <p>"The seller will decide to sell the art again or not. Please wait if you want to buy it."</p>}
             </div>
         </>
     )

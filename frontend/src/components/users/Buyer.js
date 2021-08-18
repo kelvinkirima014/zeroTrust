@@ -35,7 +35,7 @@ const Buyer = ({
             }}>
                 {deedState === "Locked" && <Button style={fullWidth} color="primary" onClick={receive} variant="contained">I received the product</Button>}
                 {deedState === "Release" && <p>"You confirmed you already received this product."</p>}
-                {deedState === "Complete" && <p>"If you want to buy a new one again, please wait for the seller to sale a car again or not."</p>}
+                {deedState === "Complete" && <p>"If you want to buy a new one again, please wait for the seller to sale the art again or not."</p>}
             </div>
         </>
     )
